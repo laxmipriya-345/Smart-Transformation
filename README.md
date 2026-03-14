@@ -1,120 +1,117 @@
-Smart Transformer Monitoring System
+# Smart Transformer Health Monitoring System
 
-A full-stack IoT-based Smart Transformer Monitoring System that monitors transformer parameters in real time, predicts faults, and provides a web dashboard for visualization.
+A machine learning–based Smart Transformer Health Monitoring System that analyzes transformer operational parameters and predicts the health condition of the transformer using historical dataset values.
 
-🚀 Project Overview
+## Project Overview
 
-This project integrates:
+This project focuses on analyzing transformer parameters such as temperature, torque, voltage, and current from a dataset to determine the operational health condition of a transformer.
 
-🌐 IoT Device (ESP8266 / NodeMCU)
+The system uses machine learning techniques to detect abnormal patterns and classify the transformer status as normal or faulty.
 
-🧠 Backend API (Flask + JWT Authentication)
+## Technologies Used
 
-🗄 Database (MySQL)
+### Backend
 
-💻 Frontend (React)
+* Python
+* Flask
+* REST API
 
-📊 Machine Learning (Optional – GRU / Fault Prediction)
+### Database
 
-The system collects transformer parameters like temperature, voltage, and current, stores them in a database, and displays real-time data on a dashboard.
+* MySQL
 
-🏗 System Architecture
-ESP8266 (Sensors)
-        ↓
-Flask Backend API
-        ↓
-MySQL Database
-        ↓
-React Frontend Dashboard
+### Machine Learning
 
-🔧 Technologies Used
-Backend
-Python
-Flask
-JWT Authentication
-MySQL
-REST APIs
-Frontend
-React.js
-Axios
-React Router
-IoT Layer
-ESP8266 (NodeMCU)
-PlatformIO
-WiFi HTTP Communication
-Machine Learning (Optional)
-GRU / LSTM for time-series prediction
-Fault detection model
+* GRU / Deep Learning Model
+* Time Series Analysis
+* Fault Prediction
 
-📌 Features
+### Data Processing
 
-✅ User Registration & Login (JWT secured)
-✅ Secure REST APIs
-✅ Real-time Transformer Data Monitoring
-✅ Database Storage of Sensor Data
-✅ Device Simulator for Testing
-✅ ESP Integration Ready
-✅ Dashboard for Data Visualization
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
 
-🔮 Fault Prediction Module (Future Enhancement)
+## Dataset
 
-📂 Project Structure
-smart-transformer/
+The system uses a transformer dataset stored in CSV format containing operational parameters such as:
+
+* Temperature
+* Torque
+* Voltage
+* Current
+* Other transformer condition parameters
+
+These features are used to train a machine learning model for health condition prediction.
+
+## Project Workflow
+
+1. Load transformer dataset from CSV
+2. Perform data preprocessing and feature selection
+3. Train machine learning model
+4. Predict transformer health condition
+5. Store and visualize results
+
+## Project Structure
+
+smart-transformer-health-monitoring/
 │
 ├── backend/
-│   ├── api/
-│   ├── services/
-│   ├── core/
 │   ├── app.py
-│   └── device_simulator.py
+│   ├── model_training.py
+│   ├── prediction.py
+│   └── dataset_loader.py
 │
-├── frontend-react/
-│   ├── src/
-│   └── package.json
+├── dataset/
+│   └── transformer_data.csv
 │
-└── esp-device/
-    ├── platformio.ini
-    └── src/main.cpp
-▶ How to Run the Project
-1️⃣ Run Backend
-cd backend
+├── models/
+│   └── trained_model.pkl
+│
+└── README.md
+
+## How to Run the Project
+
+1. Install required libraries
+
+pip install -r requirements.txt
+
+2. Run the backend server
+
 python app.py
 
-Backend runs on:
+3. Train the model
 
-http://localhost:5000
-2️⃣ Run Frontend
-cd frontend-react
-npm install
-npm start
+python model_training.py
 
-Frontend runs on:
+4. Run prediction
 
-http://localhost:3000
-3️⃣ Run Device Simulator (Optional)
-python device_simulator.py
-🔐 API Endpoints
-Authentication
-POST /register
-POST /login
-Device APIs
-POST /device-data → ESP sends data
-GET /device-data → Dashboard fetches data (JWT required)
+python prediction.py
 
-📊 Future Enhancements
-🔮 GRU-based fault prediction
-📈 Real-time charts & analytics
-☁ Cloud deployment
-📱 Mobile responsive UI
-🚨 Alert & notification system
-🎯 Project Status
+## Features
 
-✔ Backend Completed
-✔ API Tested
-✔ ESP Structure Created
-✔ Frontend In Development
+* Transformer health condition prediction
+* Dataset-based fault detection
+* Machine learning model training
+* REST API for prediction
+* Backend architecture using Flask
 
-👩‍💻 Developed By
+## Future Enhancements
 
-Smart Transformer Monitoring Team
-(B.Tech CSE – Industry-Level IoT Project)
+* Real-time monitoring integration
+* IoT sensor integration
+* Advanced deep learning models
+* Cloud deployment
+* Visualization dashboard
+
+## Project Status
+
+✔ Dataset preprocessing completed
+✔ Machine learning model developed
+✔ Backend API implemented
+
+## Developed By
+Laxmipriya Rout
+Laxmipriya Rout
+B.Tech Computer Science Engineering
